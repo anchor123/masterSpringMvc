@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,maximum-scale=1.0,
+		user-scalable=no">
+<title>profilePage</title>
+<!-- 引入样式 -->
+<link type="text/css" rel="stylesheet"
+	th:href="@{css/profiles/profile.css}">
+</head>
+<body>
+	<div class="container contentWrapper" layout:fragment="content">
+		<h2>Your Profile</h2>
+		<div class="row clearfix">
+			<div class="col-md-8 column">
+				<form role="form" th:action="@{/profile}" method="post" th:object="${profileForm}">
+					<div class="form-group">
+						<label for="exampleInputName">Name</label><input type="text"
+							class="form-control" id="exampleInputName" autofocus="autofocus"
+							th:field="${profileForm.name}"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputAge">Age</label><input type="text"
+							class="form-control" id="exampleInputAge" 
+							th:field="${profileForm.age}"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label><input
+							type="email" class="form-control" id="exampleInputEmail1" 
+							th:field="${profileForm.email}"/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputBirth">Birthdate</label><input type="date"
+							class="form-control" id="exampleInputBirth" 
+							th:field="${profileForm.birth}"/>
+					</div>
+					<button type="submit" class="btn btn-default">save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<script layout:fragment="app">
+    new Vue({
+      el: '#app',
+      data() {
+	      return {
+        	
+	      };
+	    },
+	    methods: {
+			
+     	}
+    })
+ </script>
+</html>
