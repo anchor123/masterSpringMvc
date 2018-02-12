@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultrap.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/frame">
+	<head lang="en">
+		<meta charset="UTF-8"></meta>
+		<title>index</title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<span th:text="${message}">Hello html</span>
+		</div>
+	</body>
+	<script layout:fragment="app">
+    new Vue({
+      el: '#app',
+      data() {
+	      return {
+        	
+	      };
+	    },
+	    methods: {
+			
+     	}
+    })
+ </script>
+</html>
